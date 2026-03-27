@@ -174,37 +174,55 @@ body {
 
 #reading-list li {
   display: flex;
+  margin-bottom: 20px;
+  border-radius: 0; /* sharp edges like screenshot */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#reading-list li .book-content {
+  display: flex;
+  width: 100%;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#reading-list img {
-  width: 120px;
+#reading-list li img {
+  width: 180px;
   height: auto;
-  border-radius: 4px;
   flex-shrink: 0;
+  object-fit: cover;
 }
 
-.book-info h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.4rem;
+#reading-list li .book-info {
+  flex: 1;
+  padding: 25px 30px;
+  color: white;
 }
 
-.book-info p {
+#reading-list li .book-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#reading-list li .book-info p {
   margin: 0;
-  opacity: 0.9;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  opacity: 0.95;
 }
 
-/* Make it responsive */
-@media (max-width: 768px) {
-  #reading-list li {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Color blocks on the right - matching the screenshot */
+#reading-list li.unread {
+  background-color: #e74c3c;
+}
+
+#reading-list li.read {
+  background-color: #27ae60;
+}
+
+#reading-list li .color-block {
+  width: 220px;
+  height: 100%;
+  flex-shrink: 0;
+  background-color: inherit;
 }
