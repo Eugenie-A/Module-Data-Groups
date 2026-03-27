@@ -21,3 +21,45 @@ const books = [
   },
 ];
 
+// Function to render the reading list
+function readingList(books) {
+  const readingListUl = document.getElementById("reading-list");
+
+  books.forEach((book) => {
+    // Create list item
+    const li = document.createElement("li");
+
+    // Set background color based on whether the book has been read
+    li.style.backgroundColor = book.alreadyRead ? "green" : "red";
+
+    // Create image element
+    const img = document.createElement("img");
+    img.src = book.bookCoverImage;
+    img.alt = `${book.title} book cover`;
+
+    // Create title and author container
+    const infoDiv = document.createElement("div");
+    infoDiv.className = "book-info";
+
+    const title = document.createElement("h3");
+    title.textContent = book.title;
+
+    const author = document.createElement("p");
+    author.textContent = book.author;
+
+    // Append elements
+    infoDiv.appendChild(title);
+    infoDiv.appendChild(author);
+
+    li.appendChild(img);
+    li.appendChild(infoDiv);
+
+    // Append to the reading list
+    readingListUl.appendChild(li);
+  });
+}
+
+// Run the function when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  readingList(books);
+});
