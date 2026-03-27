@@ -8,8 +8,16 @@
 
 html,
 body {
-  font-family: "Source Sans Pro", -apple-system, system-ui, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 .site-footer {
@@ -155,5 +163,48 @@ body {
 @media screen and (min-width: 992px) {
   .navbar-brand > img {
     max-height: 80px;
+  }
+}
+
+#reading-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#reading-list li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#reading-list img {
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.book-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+}
+
+.book-info p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  #reading-list li {
+    flex-direction: column;
+    text-align: center;
   }
 }
